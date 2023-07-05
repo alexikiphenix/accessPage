@@ -12,4 +12,11 @@ body {
   width: 100vw;
   height: 100vh;
   border: 1px solid black;
+}
+
+#dial {
+  display: grid;
+  grid-gap: 1%;
+  width: 50vw;
+  height: 50vw;
 }/*# sourceMappingURL=style.css.map */

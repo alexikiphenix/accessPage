@@ -2,13 +2,20 @@
 body{margin: 0;}
 *{box-sizing: border-box;}
 
-
 #wrapper
 {
     display: grid;
     place-content: center;
     width: 100vw;
     height: 100vh;
-    border: 1px solid black;
+    border: 1px solid black;    
+}
+
+#dial
+{
+    display: grid;
+    grid-gap: 1%;
+    width: 50vw;
+    height: 50vw;
 }
 
