@@ -1,1 +1,13 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid black;
+}/*# sourceMappingURL=style.css.map */
