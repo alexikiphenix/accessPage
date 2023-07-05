@@ -1,6 +1,4 @@
 "use strict";
 
 const wrapper = document.getElementById('wrapper');
-
-
-console.log(wrapper);
+const dial = document.createElement('div');
