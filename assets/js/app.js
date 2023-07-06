@@ -10,6 +10,15 @@ dial.style.backgroundColor = "#edf";
 for(let i = 0; i < 10; i++)
 {
     const dialKey = document.createElement('div');
+    dialKey.innerText = `${i}`;    
+    if(i === 0)
+    {
+        dialKey.style.order = `1`;
+        dialKey.style.gridColumnStart = `2`;
+
+
+    }
+    dial.appendChild(dialKey);
 }
 
 
