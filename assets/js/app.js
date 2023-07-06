@@ -15,8 +15,7 @@ for(let i = 0; i < 10; i++)
     {
         dialKey.style.order = `1`;
         dialKey.style.gridColumnStart = `2`;
-
-
+        console.log(dialKey.textContent);
     }
     dial.appendChild(dialKey);
 }
