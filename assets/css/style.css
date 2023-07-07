@@ -35,4 +35,8 @@ body {
   border: 1px solid black;
   background-color: black;
   border-radius: 0.5rem;
+}
+
+#dial > div:active {
+  background-color: rgb(154, 9, 9);
 }/*# sourceMappingURL=style.css.map */
