@@ -34,12 +34,15 @@ body{margin: 0;}
     user-select: none;
     border: 1px solid black;
     background-color: black;
+    transition-duration: 2s;
     border-radius: .5rem;
+
 }
 
 
 #dial > div:active
-{
+{    
     font-size: .8rem;
+    transform: rotate(10deg);
     background-color: rgb(154, 9, 9);
 }
