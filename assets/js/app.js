@@ -20,7 +20,8 @@ for(let i = 0; i < 10; i++)
     dialKey.setAttribute('data-id', i);
     dialKey.addEventListener('click', () =>
         {
-            console.log(dialKey.getAttribute('data-id'));
+            const code = Math.floor(Math.random()*1000);
+            console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
         }
     )
     dial.appendChild(dialKey);
