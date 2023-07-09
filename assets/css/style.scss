@@ -14,19 +14,20 @@ body{margin: 0;}
 #dial
 {
     display: grid;
-    place-content: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 5%;
-    width: 12vw;
-    height: 16vw;
+    place-content: center;
+    place-items: center;
+    width: 24vw;
+    height: 32vw;
 }
 
 #dial > div
 {
     display: grid;
     place-content: center;    
-    width: 100%;
+    width:100%;
     height: 100%;
     color: white;
     font-size: 1rem;
@@ -34,7 +35,8 @@ body{margin: 0;}
     user-select: none;
     border: 1px solid black;
     background-color: black;
-    transition-duration: 2s;
+    transform-origin: center;
+    transition-duration: .5s;
     border-radius: .5rem;
 
 }
@@ -42,7 +44,9 @@ body{margin: 0;}
 
 #dial > div:active
 {    
+    width: 90%;
+    height: 90%;
     font-size: .8rem;
-    transform: rotate(10deg);
+    // transform: rotate(10deg);
     background-color: rgb(154, 9, 9);
 }
