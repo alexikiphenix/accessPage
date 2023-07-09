@@ -27,5 +27,6 @@ for(let i = 0; i < 10; i++)
     dial.appendChild(dialKey);
 }
 
+/* This version is beta */
 
 wrapper.appendChild(dial);
