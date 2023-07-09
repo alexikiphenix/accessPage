@@ -18,6 +18,11 @@ for(let i = 0; i < 10; i++)
     }
     console.log(dialKey.textContent);
     dialKey.setAttribute('data-id', i);
+    dialKey.addEventListener('click', () =>
+        {
+            console.log(dialKey.getAttribute('data-id'));
+        }
+    )
     dial.appendChild(dialKey);
 }
 
