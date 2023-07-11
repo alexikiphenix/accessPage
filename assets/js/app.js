@@ -11,6 +11,7 @@ dial.style.border = "1px solid black";
 dial.style.backgroundColor = "#edf";
 
 const keepLastNumbers = (number) =>{
+    console.log(pushedNumbers);
     if(pushedNumbers.length < codeSize)
         pushedNumbers.push(number)
     else
@@ -40,6 +41,7 @@ for(let i = 0; i < 10; i++)
     dialKey.setAttribute('data-id', i);
     dialKey.addEventListener('click', () =>
         {
+            keepLastNumbers(dialKey.getAttribute('data-id'));
             console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
         }
     )
