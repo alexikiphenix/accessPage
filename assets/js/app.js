@@ -2,10 +2,30 @@
 
 const wrapper = document.getElementById('wrapper');
 const dial = document.createElement('div');
+const pushedNumbers = [];
+const codeSize = 3;
+const code = Math.floor(Math.random()*1000);
 
 dial.setAttribute('id', 'dial');
 dial.style.border = "1px solid black";
 dial.style.backgroundColor = "#edf";
+
+const keepLastNumbers = (number) =>{
+    if(pushedNumbers.length < codeSize)
+        pushedNumbers.push(number)
+    else
+    {
+        if(pushedNumbers === code )
+        {
+            alert("Tu as trouvé le code")
+            exit;
+        }
+        // after a sequence of 3 numbers we delete 
+        else
+            pushedNumbers.splice(0, codeSize);
+    }        
+}
+
 
 for(let i = 0; i < 10; i++)
 {
@@ -20,7 +40,6 @@ for(let i = 0; i < 10; i++)
     dialKey.setAttribute('data-id', i);
     dialKey.addEventListener('click', () =>
         {
-            const code = Math.floor(Math.random()*1000);
             console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
         }
     )
