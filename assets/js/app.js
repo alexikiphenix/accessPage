@@ -4,11 +4,21 @@ const wrapper = document.getElementById('wrapper');
 const dial = document.createElement('div');
 const pushedNumbers = [];
 const codeSize = 3;
-const code = Math.floor(Math.random()*1000);
+const code = Math.floor(Math.random()*10);
 
 dial.setAttribute('id', 'dial');
 dial.style.border = "1px solid black";
 dial.style.backgroundColor = "#edf";
+
+const generateCode = (size) =>
+{
+    for(let i = 0; i < size; i++)
+      code.push(Math.floor(Math.random()*10));
+
+    console.log(code);
+}
+
+generateCode(codeSize);
 
 const keepLastNumbers = (number) =>{
     console.log(pushedNumbers);
@@ -49,5 +59,4 @@ for(let i = 0; i < 10; i++)
 }
 
 /* This version is beta */
-
 wrapper.appendChild(dial);
