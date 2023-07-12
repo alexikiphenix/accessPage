@@ -20,12 +20,24 @@ const generateCode = (size) =>
 
 generateCode(codeSize);
 
-const isCodeCorrect = (code) =>
+/**
+ * 
+ * @param {Array} enteredCode 
+ * @returns 
+ */
+const isCodeCorrect = (enteredCode) =>
 {
-    console.log(code);
+    let codeIsSame = true;
+    for(let i = 0; i < size; i++)
+    {
+        if(enteredCode[i] !== code[i])
+            return false;
+    }
+    return true;    
 }
-const keepLastNumbers = (number) =>{
-    console.log(pushedNumbers);
+
+
+const keepLastNumbers = (number) =>{   
     if(pushedNumbers.length < codeSize)
         pushedNumbers.push(number)
     else
@@ -39,6 +51,8 @@ const keepLastNumbers = (number) =>{
         else
             pushedNumbers.splice(0, codeSize);
     }        
+    // console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
+    console.log(`${number} - ${code} - ${pushedNumbers}`);
 }
 
 
@@ -55,8 +69,7 @@ for(let i = 0; i < 10; i++)
     dialKey.setAttribute('data-id', i);
     dialKey.addEventListener('click', () =>
         {
-            keepLastNumbers(dialKey.getAttribute('data-id'));
-            console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
+            keepLastNumbers(dialKey.getAttribute('data-id'));           
         }
     )
     dial.appendChild(dialKey);
