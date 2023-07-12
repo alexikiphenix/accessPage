@@ -4,7 +4,7 @@ const wrapper = document.getElementById('wrapper');
 const dial = document.createElement('div');
 const pushedNumbers = [];
 const codeSize = 3;
-const code = Math.floor(Math.random()*10);
+const code = [];
 
 dial.setAttribute('id', 'dial');
 dial.style.border = "1px solid black";
