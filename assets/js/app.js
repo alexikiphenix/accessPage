@@ -20,6 +20,10 @@ const generateCode = (size) =>
 
 generateCode(codeSize);
 
+const isCodeCorrect = (code) =>
+{
+    
+}
 const keepLastNumbers = (number) =>{
     console.log(pushedNumbers);
     if(pushedNumbers.length < codeSize)
