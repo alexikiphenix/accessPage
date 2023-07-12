@@ -22,7 +22,7 @@ generateCode(codeSize);
 
 const isCodeCorrect = (code) =>
 {
-    
+    console.log(code);
 }
 const keepLastNumbers = (number) =>{
     console.log(pushedNumbers);
