@@ -49,7 +49,10 @@ const keepLastNumbers = (number) =>{
         }
         // after a sequence of 3 numbers we delete 
         else
+        {
             pushedNumbers.splice(0, codeSize);
+            pushedNumbers.push(number)
+        }
     }        
     // console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
     console.log(`${number} - ${code} - ${pushedNumbers}`);
