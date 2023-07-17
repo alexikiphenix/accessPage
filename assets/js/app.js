@@ -6,6 +6,15 @@ const pushedNumbers = [];
 const codeSize = 3;
 const code = [];
 
+
+const getRandomInt = (min, max) =>
+{
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +1)) + min;
+  }
+  
+
 dial.setAttribute('id', 'dial');
 dial.style.border = "1px solid black";
 dial.style.backgroundColor = "#edf";
@@ -13,8 +22,7 @@ dial.style.backgroundColor = "#edf";
 const generateCode = (size) =>
 {
     for(let i = 0; i < size; i++)
-      code.push(Math.floor(Math.random()*10));
-
+      code.push(getRandomInt(0,9));
     console.log(code);
 }
 
@@ -44,7 +52,7 @@ const keepLastNumbers = (number) =>{
     {
         if(pushedNumbers === code )
         {
-            alert("Tu as trouvé le code")
+            alert("Tu as trouvé le code");
             exit;
         }
         // after a sequence of 3 numbers we delete 
