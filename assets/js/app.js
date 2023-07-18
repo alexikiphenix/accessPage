@@ -75,7 +75,7 @@ const checkValueAndPos = (array = []) =>
     if(array.length <= code.length)
     {
         for(let i = 0; i < array.length; i++)
-        {
+        {            
             console.log('Test');
         }
     }
@@ -92,6 +92,7 @@ const keepLastNumbers = (number) =>
             if(isCodeCorrect(pushedNumbers))
             {
                 console.log("Tu as trouvé le code");
+                window.location('www.google.com');
                 exit;
             }
             else

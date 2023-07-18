@@ -8,26 +8,37 @@
 <body>
     
     <script>
-        const isCodeCorrect = (enteredCode) =>
-        {    
-            for(let i = 0; i < 3; i++)
-            {
-                if(enteredCode[i] !== code[i])
-                {
-                    console.log(`Test code => ${enteredCode[i]} --- ${code[i]} `);
-                    return false;                    
-                }
-            }
-            return true;          
-        }
 
-        const code = [0, 5, 7];
-        const enteredCode = [0, 5, 7];
+    const code = [1, 5, 7];   
+    const enteredCode = [1, 5, 7];
+
+    /**
+     * 
+     * @param {Array} enteredCode 
+     * @returns 
+     */
+    const isCodeCorrect = (enteredCode) =>
+    {    
+        for(let i = 0; i < code.length; i++)
+        {
+            if(enteredCode[i] !== code[i])
+            {
+                // console.log(`Test code => ${enteredCode[i]} --- ${code[i]} `);
+                return false;            
+            }
+        }
+        return true;        
+    }
+
+       
 
         if(isCodeCorrect(enteredCode))
         {
             console.log('LE CODE EST BON !');
         }
+        else
+            console.log('LE CODE EST FAUX !');
+
 
     </script>
 </body>
