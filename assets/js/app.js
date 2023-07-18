@@ -70,6 +70,16 @@ const isCodeCorrect = (enteredCode) =>
     return true;        
 }
 
+const checkValueAndPos = (array = []) => 
+{
+    if(array.length <= code.length)
+    {
+        for(let i = 0; i < array.length; i++)
+        {
+            console.log('Test');
+        }
+    }
+}
 
 const keepLastNumbers = (number) =>
 {   
