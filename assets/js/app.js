@@ -16,8 +16,8 @@ const getRandomInt = (min, max) =>
   
 
 dial.setAttribute('id', 'dial');
-dial.style.border = "1px solid black";
-dial.style.backgroundColor = "#edf";
+dial.style.padding = `5%`;
+dial.style.backgroundColor = `black`;
 
 const generateCode = (codeSize) =>
 {
@@ -71,25 +71,28 @@ const keepLastNumbers = (number) =>
     // console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
 }
 
-
-for(let i = 0; i < 10; i++)
+const createDialer = () =>
 {
-    const dialKey = document.createElement('div');
-    dialKey.innerText = `${i}`;    
-    if(i === 0)
+    for(let i = 0; i < 10; i++)
     {
-        dialKey.style.order = `1`;
-        dialKey.style.gridColumnStart = `2`;
+        const dialKey = document.createElement('div');
+        dialKey.innerText = `${i}`;    
+        if(i === 0)
+        {
+            dialKey.style.order = `1`;
+            dialKey.style.gridColumnStart = `2`;
+        }
+        // console.log(dialKey.textContent);
+        dialKey.setAttribute('data-id', i);
+        dialKey.addEventListener('click', () =>
+            {
+                keepLastNumbers(dialKey.getAttribute('data-id'));           
+            }
+        )
+        dial.appendChild(dialKey);
     }
-    // console.log(dialKey.textContent);
-    dialKey.setAttribute('data-id', i);
-    dialKey.addEventListener('click', () =>
-    {
-        keepLastNumbers(dialKey.getAttribute('data-id'));           
-    }
-    )
-    dial.appendChild(dialKey);
 }
 
+createDialer();
 /* This version is beta */
 wrapper.appendChild(dial);
