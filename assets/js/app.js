@@ -13,16 +13,40 @@ const getRandomInt = (min, max) =>
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min +1)) + min;
 }
-  
+
 
 dial.setAttribute('id', 'dial');
 dial.style.padding = `5%`;
 dial.style.backgroundColor = `black`;
 
+
+const createDialer = () =>
+{
+    for(let i = 0; i < 10; i++)
+    {
+        const dialKey = document.createElement('div');
+        dialKey.innerText = `${i}`;    
+        if(i === 0)
+        {
+            dialKey.style.order = `1`;
+            dialKey.style.gridColumnStart = `2`;
+        }
+        // console.log(dialKey.textContent);
+        dialKey.setAttribute('data-id', i);
+        dialKey.addEventListener('click', () =>
+        {
+            keepLastNumbers(dialKey.getAttribute('data-id'));           
+        }
+        )
+        dial.appendChild(dialKey);
+    }
+}
+createDialer();
+
 const generateCode = (codeSize) =>
 {
     for(let i = 0; i < codeSize; i++)
-      code.push(getRandomInt(0,9));
+    code.push(getRandomInt(0,9));
     console.log(code);
 }
 
@@ -43,8 +67,7 @@ const isCodeCorrect = (enteredCode) =>
             return false;            
         }
     }
-    return true;    
-    
+    return true;        
 }
 
 
@@ -71,28 +94,6 @@ const keepLastNumbers = (number) =>
     // console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
 }
 
-const createDialer = () =>
-{
-    for(let i = 0; i < 10; i++)
-    {
-        const dialKey = document.createElement('div');
-        dialKey.innerText = `${i}`;    
-        if(i === 0)
-        {
-            dialKey.style.order = `1`;
-            dialKey.style.gridColumnStart = `2`;
-        }
-        // console.log(dialKey.textContent);
-        dialKey.setAttribute('data-id', i);
-        dialKey.addEventListener('click', () =>
-            {
-                keepLastNumbers(dialKey.getAttribute('data-id'));           
-            }
-        )
-        dial.appendChild(dialKey);
-    }
-}
 
-createDialer();
 /* This version is beta */
 wrapper.appendChild(dial);
