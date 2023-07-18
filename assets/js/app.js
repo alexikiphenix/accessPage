@@ -12,16 +12,16 @@ const getRandomInt = (min, max) =>
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min +1)) + min;
-  }
+}
   
 
 dial.setAttribute('id', 'dial');
 dial.style.border = "1px solid black";
 dial.style.backgroundColor = "#edf";
 
-const generateCode = (size) =>
+const generateCode = (codeSize) =>
 {
-    for(let i = 0; i < size; i++)
+    for(let i = 0; i < codeSize; i++)
       code.push(getRandomInt(0,9));
     console.log(code);
 }
@@ -34,36 +34,41 @@ generateCode(codeSize);
  * @returns 
  */
 const isCodeCorrect = (enteredCode) =>
-{
-    let codeIsSame = true;
-    for(let i = 0; i < size; i++)
+{    
+    for(let i = 0; i < codeSize; i++)
     {
         if(enteredCode[i] !== code[i])
-            return false;
+        {
+            // console.log(`Test code => ${enteredCode[i]} --- ${code[i]} `);
+            return false;            
+        }
     }
     return true;    
+    
 }
 
 
-const keepLastNumbers = (number) =>{   
+const keepLastNumbers = (number) =>
+{   
     if(pushedNumbers.length < codeSize)
-        pushedNumbers.push(number)
-    else
     {
-        if(pushedNumbers === code )
+        pushedNumbers.push(number);
+        console.log(`${code.join()} - ${pushedNumbers.join()}`);
+        if(pushedNumbers.length === codeSize)
         {
-            alert("Tu as trouvé le code");
-            exit;
+            if(isCodeCorrect(pushedNumbers))
+            {
+                console.log("Tu as trouvé le code");
+                exit;
+            }
+            else
+            {
+                // after a sequence of 3 numbers we delete 
+                pushedNumbers.splice(0, codeSize);               
+            }
         }
-        // after a sequence of 3 numbers we delete 
-        else
-        {
-            pushedNumbers.splice(0, codeSize);
-            pushedNumbers.push(number)
-        }
-    }        
+    }     
     // console.log(`${dialKey.getAttribute('data-id')} - ${code}`);
-    console.log(`${number} - ${code} - ${pushedNumbers}`);
 }
 
 
@@ -76,12 +81,12 @@ for(let i = 0; i < 10; i++)
         dialKey.style.order = `1`;
         dialKey.style.gridColumnStart = `2`;
     }
-    console.log(dialKey.textContent);
+    // console.log(dialKey.textContent);
     dialKey.setAttribute('data-id', i);
     dialKey.addEventListener('click', () =>
-        {
-            keepLastNumbers(dialKey.getAttribute('data-id'));           
-        }
+    {
+        keepLastNumbers(dialKey.getAttribute('data-id'));           
+    }
     )
     dial.appendChild(dialKey);
 }
