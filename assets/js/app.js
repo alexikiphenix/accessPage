@@ -35,7 +35,7 @@ const createDialer = () =>
         dialKey.setAttribute('data-id', i);
         dialKey.addEventListener('click', () =>
         {
-            keepLastNumbers(dialKey.getAttribute('data-id'));           
+            keepLastNumbers(parseInt(dialKey.getAttribute('data-id')));           
         }
         )
         dial.appendChild(dialKey);
@@ -89,11 +89,12 @@ const keepLastNumbers = (number) =>
         console.log(`${code.join()} - ${pushedNumbers.join()}`);
         if(pushedNumbers.length === codeSize)
         {
+            console.log(`3 CHIFFRES ${code[0]}${code[1]}${code[2]} ${pushedNumbers[0]}${pushedNumbers[1]}${pushedNumbers[2]}`);            
             if(isCodeCorrect(pushedNumbers))
             {
-                console.log("Tu as trouvé le code");
-                window.location('www.google.com');
-                exit;
+                alert("Tu as trouvé le code");
+
+                location.assign('https://www.wikipedia.org');            
             }
             else
             {
