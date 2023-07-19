@@ -98,7 +98,8 @@ const keepLastNumbers = (number) =>
             if(isCodeCorrect(pushedNumbers))
             {
                 alert("Tu as trouvé le code");
-                setTimeout(goToWinPage, 2000);                            
+                document.title = "redirection...";
+                setTimeout(goToWinPage, 5000);                            
             }
             else
             {
