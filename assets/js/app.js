@@ -22,6 +22,10 @@ dial.style.backgroundColor = `black`;
 
 const createDialer = () =>
 {
+    const smallScreen = document.createElement('div');
+    smallScreen.classList.add('smallScreen');
+    dial.appendChild(smallScreen);
+    
     for(let i = 0; i < 10; i++)
     {
         const dialKey = document.createElement('div');
