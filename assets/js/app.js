@@ -52,6 +52,11 @@ const generateCode = (codeSize) =>
 
 generateCode(codeSize);
 
+const goToWinPage = () =>
+{
+    location.assign('https://www.wikipedia.org');
+}
+
 /**
  * 
  * @param {Array} enteredCode 
@@ -93,8 +98,7 @@ const keepLastNumbers = (number) =>
             if(isCodeCorrect(pushedNumbers))
             {
                 alert("Tu as trouvé le code");
-
-                location.assign('https://www.wikipedia.org');            
+                setTimeout(goToWinPage, 2000);                            
             }
             else
             {
